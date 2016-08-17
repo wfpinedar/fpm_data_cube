@@ -4,7 +4,7 @@ pass_variables = ["HTTP_PROXY", "http_proxy", "FTP_PROXY", "ftp_proxy", "HTTPS_P
 
 Vagrant.configure(2) do |config|
   config.vm.box = "centos/7"
-  config.ssh.insert_key = false # Soluciona fallo con ssh gpg key
+  # config.ssh.insert_key = false # Soluciona fallo con ssh gpg key
 
   config.vm.network "forwarded_port", guest: 3000, host: 13000
   config.vm.network "forwarded_port", guest: 8000, host: 18000
