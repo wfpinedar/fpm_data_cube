@@ -1,0 +1,16 @@
+Could not locate executable gfortran
+Could not locate executable f95
+Could not locate executable ifort
+Could not locate executable ifc
+Could not locate executable lf95
+Could not locate executable pgfortran
+Could not locate executable f90
+Could not locate executable f77
+Could not locate executable fort
+Could not locate executable efort
+Could not locate executable efc
+Could not locate executable g77
+Could not locate executable g95
+Could not locate executable pathf95
+don't know how to compile Fortran code on platform 'posix'
+
