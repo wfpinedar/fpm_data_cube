@@ -1,4 +1,8 @@
 #!/bin/bash
+echo 'Ejecutando: install_vboxguestaditions.sh'
+if lsmod | grep -i vboxguest &> /dev/null; then
+ echo 'VirtualBox Guest Additions ya está instalado. Nada que hacer.'
+else
 sudo su -c "
 yum –exclude=kernel* update -y
 yum install -y gcc
@@ -11,3 +15,4 @@ mount VBoxGuestAdditions.iso -o loop /mnt
 /mnt/VBoxLinuxAdditions.run
 #rm -rf VBoxGuestAdditions.iso
 "
+fi

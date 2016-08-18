@@ -1,7 +1,18 @@
 #!/bin/bash
-if [ "$1" == 'r' ]; then
+if [ "$1" == 'h' ]
+then
+ echo vagrant halt
+ vagrant halt
+elif [ "$1" == 'r' ]
+then
+ echo vagrant reload
  vagrant reload
+ echo vagrant ssh
+ vagrant ssh
 else
+ echo vagrant up
  vagrant up
+ echo vagrant ssh
+ vagrant ssh
 fi
-vagrant ssh
+

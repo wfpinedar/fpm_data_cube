@@ -1,5 +1,9 @@
 #!/bin/bash
+echo vagrant up
 vagrant up
+echo vagrant provision
 vagrant provision
+echo vagrant reload
 vagrant reload
+echo vagrant ssh
 vagrant ssh
