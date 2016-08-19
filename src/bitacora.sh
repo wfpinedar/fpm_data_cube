@@ -33,8 +33,13 @@ sudo yum localinstall -y http://yum.postgresql.org/9.3/redhat/rhel-7-x86_64/pgdg
 sudo yum install -y postgresql93-server postgresql93 postgresql93-contrib postgresql93-libs PyQt4 PyQt4-devel PyQt4-webkit gdal gdal-devel gdal-libs gdal-python numpy numpy-f2py postgis2_93 postgis2_93-client postgis2_93-debuginfo postgis2_93-devel postgis2_93-docs postgis2_93-utils python-psycopg2 pytz scipy pgadmin3_93 environment-modules wget git gcc gcc-c++ unzip
 # rationale: pip: Python Packaget Index: Gestor recomendado para instalar paquetes
 # link: https://packaging.python.org/current/
+if [ -f get-pip.py ]
+then
+  echo 'El archivo get-pip.py ya está descargado y ejecutado. Nada que hacer.'
+else
 wget https://bootstrap.pypa.io/get-pip.py
 sudo python get-pip.py
+fi #get-pip.py
 # Instalación de paquetes de python
 sudo pip install numexpr
 sudo pip install ephem
