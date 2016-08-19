@@ -123,6 +123,7 @@ if [ -d scripts_sql ]
 then
   echo 'scripts_sql existe. Nada que hacer.'
 else
+figlet -f big Ejecutando Scripts SQL
 mkdir scripts_sql
 cd $_
 wget https://raw.githubusercontent.com/wfpinedar/fpm_data_cube/master/src/scripts_sql/v1__schema.sql
@@ -143,7 +144,7 @@ fi #scripts_sql
 # Create directory to store tiles
 if [ -d /g ]
 then
-  echo 'scripts_sql existe. Nada que hacer.'
+  echo '/g existe. Nada que hacer.'
 else
 sudo mkdir /g/
 chmod 777 /g/
