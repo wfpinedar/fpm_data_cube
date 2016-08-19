@@ -1,18 +1,21 @@
 #!/bin/bash
+RED='\033[0;31m'
+NC='\033[0m' # No Color
+
 if [ "$1" == 'h' ]
 then
- echo vagrant halt
+ echo ${RED}vagrant halt${NC}
  vagrant halt
 elif [ "$1" == 'r' ]
 then
- echo vagrant reload
+ echo ${RED}vagrant reload${NC}
  vagrant reload
- echo vagrant ssh
+ echo ${RED}vagrant ssh${NC}
  vagrant ssh
 else
- echo vagrant up
+ echo ${RED}vagrant up${NC}
  vagrant up
- echo vagrant ssh
+ echo ${RED}vagrant ssh${NC}
  vagrant ssh
 fi
 

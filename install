@@ -1,9 +1,12 @@
 #!/bin/bash
-echo vagrant up
+RED='\033[0;31m'
+NC='\033[0m' # No Color
+
+echo -e ${RED}vagrant up${NC}
 vagrant up
-echo vagrant provision
+echo -e ${RED}vagrant provision${NC}
 vagrant provision
-echo vagrant reload
+echo -e ${RED}vagrant reload${NC}
 vagrant reload
-echo vagrant ssh
+echo -e ${RED}vagrant ssh${NC}
 vagrant ssh
