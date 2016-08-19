@@ -1,7 +1,8 @@
 #!/bin/bash
-echo Bienvenido al instalador de cubo de datos del Fondo Patrimonio Natural. author: @wfpinedar
+echo -e "\n\n"Bienvenido al instalador de cubo de datos del Fondo Patrimonio Natural. author: @wfpinedar
 echo Instalando utilidades necesarias para el script...
 # rationale: figlet: muestra letreros vistosos en terminal
+sudo yum install -y epel-release
 sudo yum install -y \
 figlet \
 sudo
@@ -10,7 +11,7 @@ sudo
 figlet -f big Instalando Dependencias
 # Se actualiza como recomienda la documentación de Red Hat
 # link: https://access.redhat.com/articles/11258
-sudo yum update -y
+sudo yum update -y #No va de primero?
 sudo yum install -y epel-release
 # Repositorio de postgresql oficial
 # link: https://www.postgresql.org/download/linux/redhat/
