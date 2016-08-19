@@ -1,0 +1,8 @@
+#https://www.certdepot.net/rhel7-create-delete-partitions/
+parted
+select /dev/sdb
+mktable gpt
+#for best performance align block 2048s
+mkpart primary ext4 2048s 100%
+print
+
