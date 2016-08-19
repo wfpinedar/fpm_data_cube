@@ -1,4 +1,5 @@
-#https://www.certdepot.net/rhel7-create-delete-partitions/
+#linkk:https://www.certdepot.net/rhel7-create-delete-partitions/
+#link: http://rainbow.chard.org/2013/01/30/how-to-align-partitions-for-best-performance-using-parted/
 parted
 select /dev/sdb
 mktable gpt
