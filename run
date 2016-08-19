@@ -4,18 +4,18 @@ NC='\033[0m' # No Color
 
 if [ "$1" == 'h' ]
 then
- echo ${RED}vagrant halt${NC}
+ echo -e ${RED}vagrant halt${NC}
  vagrant halt
 elif [ "$1" == 'r' ]
 then
- echo ${RED}vagrant reload${NC}
+ echo -e ${RED}vagrant reload${NC}
  vagrant reload
- echo ${RED}vagrant ssh${NC}
+ echo -e ${RED}vagrant ssh${NC}
  vagrant ssh
 else
- echo ${RED}vagrant up${NC}
+ echo -e ${RED}vagrant up${NC}
  vagrant up
- echo ${RED}vagrant ssh${NC}
+ echo -e ${RED}vagrant ssh${NC}
  vagrant ssh
 fi
 
