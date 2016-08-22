@@ -1,4 +1,4 @@
-#Correr script en manualmente
+#Correr script manualmente
 
 Para correr el script basta con ejecutar en una terminal el comando:
 
