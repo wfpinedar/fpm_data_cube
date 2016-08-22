@@ -6,10 +6,10 @@ Vagrant.configure(2) do |config|
   config.vm.box = "centos/7"
   # config.ssh.insert_key = false # Soluciona fallo con ssh gpg key
 
-  config.vm.network "forwarded_port", guest: 3000, host: 13000
-  config.vm.network "forwarded_port", guest: 8000, host: 18000
-  config.vm.network "forwarded_port", guest: 8080, host: 18080
-  config.vm.network "forwarded_port", guest: 9000, host: 19000
+  #config.vm.network "forwarded_port", guest: 3000, host: 13000
+  #config.vm.network "forwarded_port", guest: 8000, host: 18000
+  #config.vm.network "forwarded_port", guest: 8080, host: 18080
+  #config.vm.network "forwarded_port", guest: 9000, host: 19000
   
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
