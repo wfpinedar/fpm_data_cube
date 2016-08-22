@@ -31,15 +31,19 @@ sudo yum localinstall -y http://yum.postgresql.org/9.3/redhat/rhel-7-x86_64/pgdg
 # rationale: gcc gcc-c++: Compiladores de código C, C++ y otros
 # rationale: unzip: Descompresor de archivos ZIP
 sudo yum install -y postgresql93-server postgresql93 postgresql93-contrib postgresql93-libs PyQt4 PyQt4-devel PyQt4-webkit gdal gdal-devel gdal-libs gdal-python numpy numpy-f2py postgis2_93 postgis2_93-client postgis2_93-debuginfo postgis2_93-devel postgis2_93-docs postgis2_93-utils python-psycopg2 pytz scipy pgadmin3_93 environment-modules wget git gcc gcc-c++ unzip
+
 # rationale: pip: Python Packaget Index: Gestor recomendado para instalar paquetes
 # link: https://packaging.python.org/current/
 if [ -f get-pip.py ]
 then
   echo 'El archivo get-pip.py ya está descargado y ejecutado. Nada que hacer.'
 else
+
 wget https://bootstrap.pypa.io/get-pip.py
 sudo python get-pip.py
+
 fi #get-pip.py
+
 # Instalación de paquetes de python
 sudo pip install numexpr
 sudo pip install ephem
@@ -50,12 +54,14 @@ if [ -d EO_tools ]
 then
   echo 'EO_tools ya está instalado. Nada que hacer.'
 else 
+
 git clone https://github.com/GeoscienceAustralia/EO_tools.git -b stable --single-branch --depth=10
 figlet -f big Instalando EOtools
 cd EO_tools/
-# Instalan dependencias
+# Instalan dependencias de EO_tools
 sudo python setup.py install
 cd ..
+
 fi #EO_tools
 
 # Download and Install Data Cube
@@ -65,6 +71,7 @@ if [ -d agdc ]
 then
   echo 'agdc ya está instalado. Nada que hacer.'
 else
+
 git clone -b develop --single-branch https://github.com/GeoscienceAustralia/agdc.git
 # Change agdc_default.config
 cp agdc/agdc/agdc-example.conf agdc/agdc/agdc_default.config
@@ -81,6 +88,7 @@ sed -i.bak 's/HOST = "host"/HOST = "0.0.0.0"/g' api/source/main/python/datacube/
 sed -i 's/PORT = "port"/PORT = "3128"/g' api/source/main/python/datacube/config.py
 sed -i 's/DATABASE = "database"/DATABASE = "postgres"/g' api/source/main/python/datacube/config.py
 cd ..
+
 fi #agdc
 
 # Realizando configuración POSTGRESQL
@@ -88,15 +96,32 @@ if [ -f /var/lib/pgsql/9.3/data/pg_hba.conf ]
 then
   echo 'PostgreSQL ya está configurado. Nada que hacer.'
 else
+
 sudo /usr/pgsql-9.3/bin/postgresql93-setup initdb
 sudo systemctl enable postgresql-9.3.service
 sudo systemctl start postgresql-9.3.service
+
 fi #/var/lib/pgsql/9.3/data/pg_hba.conf
+
+# Change permissions
+#Towards the bottom, the second local host should be trust
+#Hacia la parte inferior, el segundo anfitrión local debe ser de confianza.
+if [ -f /var/lib/pgsql/9.3/data/pg_hba.conf.bak ]
+then
+  echo '/var/lib/pgsql/9.3/data/pg_hba.conf.bak existe. Nada que hacer.'
+else
+
+sed -i.bak '/^local/ s/peer/trust/' /var/lib/pgsql/9.3/data/pg_hba.conf
+sudo systemctl restart postgresql-9.3.service
+
+fi #/var/lib/pgsql/9.3/data/pg_hba.conf.bak
+
 # Create database roles
 if [ -f /tmp/create_databases_roles.sql ]
 then
   echo '/tmp/create_databases_roles.sql existe y está ejecutado. Nada que hacer.'
 else
+
 tee /tmp/create_databases_roles.sql << EOF
 create user cube_admin with superuser;
 create user cube_user with superuser;
@@ -107,22 +132,14 @@ create group cube_admin_group with superuser;
 EOF
 sudo chown postgres:postgres /tmp/create_databases_roles.sql
 sudo -u postgres psql -f /tmp/create_databases_roles.sql
-fi #/tmp/create_databases_roles.sql
 
-# Change permissions
-#Towards the bottom, the second local host should be trust
-#Hacia la parte inferior, el segundo anfitrión local debe ser de confianza.
-if [ -f /var/lib/pgsql/9.3/data/pg_hba.conf.bak ]
-then
-  echo '/var/lib/pgsql/9.3/data/pg_hba.conf.bak existe. Nada que hacer.'
-else
-sed -i.bak '/^local/ s/peer/trust/' /var/lib/pgsql/9.3/data/pg_hba.conf
-fi #/var/lib/pgsql/9.3/data/pg_hba.conf.bak
+fi #/tmp/create_databases_roles.sql
 
 if [ -d scripts_sql ]
 then
   echo 'scripts_sql existe. Nada que hacer.'
 else
+
 figlet -f big Ejecutando Scripts SQL
 mkdir scripts_sql
 cd $_
@@ -138,7 +155,9 @@ do
   sudo -u postgres psql < $i
 done
 cd ..
+
 fi #scripts_sql
+
 #Install API
 #sudo python setup.py install –force
 # Create directory to store tiles
@@ -146,6 +165,8 @@ if [ -d /g ]
 then
   echo '/g existe. Nada que hacer.'
 else
+
 sudo mkdir /g/
 chmod 777 /g/
+
 fi # /g
