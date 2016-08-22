@@ -1,6 +1,7 @@
 #!/bin/bash
 if [ ! -f /tmp/utils ]
 then
+  echo 'Descargando Utilidad Script BASH'
   curl https://raw.githubusercontent.com/GLUD/bash_utils/master/utils -o /tmp/utils
 fi
 . /tmp/utils
