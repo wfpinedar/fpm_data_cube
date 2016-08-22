@@ -5,7 +5,8 @@ then
   curl https://raw.githubusercontent.com/GLUD/bash_utils/master/utils -o /tmp/utils
 fi
 . /tmp/utils
-e_header "\n\n"Bienvenido al instalador de cubo de datos del Fondo Patrimonio Natural. author: @wfpinedar
+echo;echo;
+e_header 'Bienvenido al instalador de cubo de datos del Fondo Patrimonio Natural. author: @wfpinedar'
 e_note 'Instalando utilidades necesarias para el script...'
 # rationale: epel-release: instala el repositorio community de Centos
 # rationale: figlet: muestra letreros vistosos en terminal
