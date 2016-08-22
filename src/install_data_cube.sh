@@ -7,10 +7,11 @@ then
   . /tmp/utils
   
   curl https://raw.githubusercontent.com/wfpinedar/fpm_data_cube/master/src/bitacora.sh -o /tmp/bitacora.sh
-  while read linea
+  while read -r linea
   do
     printc "$linea"
-    eval "$linea"
+    #eval "$linea"
+    $linea
   done < /tmp/bitacora.sh
  
 else
