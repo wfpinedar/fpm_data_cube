@@ -77,7 +77,17 @@ figlet -f big Instalando Dependencias
 # rationale: gcc-c++: Compiladores de código C, C++ y otros
 # rationale: unzip: Descompresor de archivos ZIP
 # rationale: gcc-gfortran: Compilador fortran
-sudo yum install -y postgresql93-server postgresql93 postgresql93-contrib postgresql93-libs PyQt4 PyQt4-devel PyQt4-webkit gdal gdal-devel gdal-libs gdal-python numpy numpy-f2py postgis2_93 postgis2_93-client postgis2_93-debuginfo postgis2_93-devel postgis2_93-docs postgis2_93-utils python-psycopg2 pytz scipy pgadmin3_93 environment-modules wget git gcc gcc-c++ unzip gcc-gfortran
+# rationale: rabbitmq-server:
+# rationale: redis:
+# rationale: tkinter:
+# rationale: freetype-devel:
+# rationale: ImageMagick:
+# rationale: httpd:
+sudo yum install -y postgresql93-server postgresql93 postgresql93-contrib postgresql93-libs ̣\
+  PyQt4 PyQt4-devel PyQt4-webkit gdal gdal-devel gdal-libs gdal-python numpy numpy-f2py postgis2_93 \
+  postgis2_93-client postgis2_93-debuginfo postgis2_93-devel postgis2_93-docs postgis2_93-utils \
+  python-psycopg2 pytz scipy pgadmin3_93 environment-modules wget git gcc gcc-c++ unzip gcc-gfortran \
+  rabbitmq-server redis tkinter freetype-devel ImageMagick httpd
 
 # rationale: Instalando Python Packaget Index(pip): Gestor recomendado para instalar paquetes
 # link: https://packaging.python.org/current/
@@ -98,7 +108,16 @@ figlet -f big 'Instalando paquetes python'
 
 # rationale: numexpr:
 # rationale: ephem:
-sudo pip install numexpr ephem
+# rationale: celery:
+# rationale: flask:
+# rationale: flask-cors:
+# rationale: redis:
+# rationale: amqp:
+# rationale: pyrabbit:
+# rationale: sklearn:
+# rationale: numpy==1.9:
+sudo pip install numexpr ephem celery flask flask-cors redis amqp pyrabbit enum matplotlib Image \
+  sklearn numpy==1.9
 
 # rationale: Instalando Earth Observation Tools
 # rationale: se valida si EOTools está instalado

@@ -1,0 +1,102 @@
+$(cd ~/test/; celery worker -A datacube_worker --purge)
+ls
+cd
+cd test/
+$(cd ~/test/; celery worker -A datacube_worker --purge)
+sudo su
+ls
+cd
+ls
+cd test/
+ls
+$(cd ~/test/; celery worker -A datacube_worker --purge)
+ls
+sudo su
+$(cd ~/test/; celery worker -A datacube_worker --purge)
+sudo pip install sklearn numpy==1.9
+sudo apt-get install libfreetype6 libfreetype6-dev
+sudo yum install libfreetype6 libfreetype6-dev
+yum search libfreetype6
+yum search freetype
+sudo yum install -y freetype-devel
+sudo -H pip install matplotlib
+sudo yum search imagemagick
+sudo yum install -y ImageMagick.x86_64
+sudo yum install -y httpd
+cd ~/test/; celery worker -A datacube_worker --purge
+sudo -u postgres psql <<< curl https://raw.githubusercontent.com/wfpinedar/fpm_data_cube/master/src/installer/colombia.sql
+ls -la
+sudo chown wfpinedar -R .
+sudo -u postgres psql <<< curl https://raw.githubusercontent.com/wfpinedar/fpm_data_cube/master/src/installer/colombia.sql
+ls
+sudo -u postgres psql <<< $*curl https://raw.githubusercontent.com/wfpinedar/fpm_data_cube/master/src/installer/colombia.sql)
+sudo -u postgres psql <<< $(curl https://raw.githubusercontent.com/wfpinedar/fpm_data_cube/master/src/installer/colombia.sql)
+cd ..
+wget https://raw.githubusercontent.com/wfpinedar/fpm_data_cube/master/src/installer/colombia.sql
+sudo -u postgres psql < colombia.sql 
+$(cd ~/test/; celery worker -A datacube_worker --purge)
+sudo updatedb
+sudo locate make_image.py
+cd test/
+ls
+vim make_image.py 
+python make_image.py 
+sudo su
+python make_image.py 
+cat make_image.py 
+python
+python /v
+python -v
+vim /home/wfpinedar/test/celeryconfig.py
+vim datacube_worker.py
+$(cd ~/test/; celery worker -A datacube_worker --purge)
+vim datacube_worker.py
+sudo mkdir /tilestore
+vim datacube_worker.py
+$(cd ~/test/; celery worker -A datacube_worker --purge)
+vim datacube_worker.py
+cat datacube_worker.py
+python
+$(cd ~/test/; celery worker -A datacube_worker --purge)
+ls+
+ls
+python make_image.py 
+cat datacube_worker.py
+sudo su
+cat datacube_worker.py
+$(cd ~/test/; celery worker -A datacube_worker --purge)
+python test/make_image.py 
+vim test/make_image.py 
+vim /usr/lib/python2.7/site-packages/celery/*.py
+ls
+tree /usr/lib/python2.7/site-packages/celery/app/
+ls -r /usr/lib/python2.7/site-packages/celery/app/
+ls -r /usr/lib/python2.7/site-packages/celery/
+grep -lir "ip" /usr/lib/python2.7/site-packages/celery/
+find /usr/lib/python2.7/site-packages/celery/ -name "*config*"
+find /usr/lib/python2.7/site-packages/celery/ -name "*conf*"
+find /usr/lib/python2.7/site-packages/celery/ -name "*init*"
+sudo su
+python test/make_image.py 
+python -v test/make_image.py 
+ls
+sudo su
+python -v test/make_image.py 
+python  test/make_image.py 
+cat test/make_image.py 
+ls
+sudo mkdir /tilestore/tile_cache
+sudo openssl
+sudo openssl --version
+cat /etc/hosts
+netstat -nlt | grep '\<25\>'
+sudo python  test/make_image.py 
+sudo python test/make_image.py 
+vim test/make_image.py 
+ls
+sudo su
+sudo python test/make_image.py 
+ls
+ls test/
+sudo python test/dc_tasks.py
+sudo python test/dwui.py 

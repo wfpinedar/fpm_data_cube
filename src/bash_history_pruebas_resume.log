@@ -1,0 +1,38 @@
+wget https://github.com/wfpinedar/fpm_data_cube/raw/master/src/installer/datacube-working.tgz
+tar -xzvf datacube-working.tgz
+./DataCube-dist/installer/CentOS/installer.sh
+
+cd /root/DataCube-dist/installer/EO_tools/
+python setup.py install
+
+sed -i.bak '/^local/ s/peer/trust/' /var/lib/pgsql/9.3/data/pg_hba.conf
+sed -i '/^host/ s/ident/md5/' /var/lib/pgsql/9.3/data/pg_hba.conf
+sudo systemctl restart postgresql-9.3.service
+
+psql -h 127.0.0.1 -U cube_user -d postgres -W
+
+cd test/
+celery worker -A datacube_worker --purge
+
+
+cd /root/DataCube-dist/agdc/api
+python setup.py install
+
+$(cd ~/test/; celery worker -A datacube_worker --purge)
+
+setenforce 0
+sudo systemctl firewalld stop
+
+# se cambia IP acceso y puerto?
+vim /var/lib/pgsql/9.3/data/postgresql.conf
+
+cd /root/DataCube-dist/EO_tools/
+python setup.py install
+
+cp /root/DataCube-dist/agdc/agdc/agdc_default.conf /usr/lib/python2.7/site-packages/agdc-1.2.1b-py2.7.egg/agdc/agdc_default.conf
+
+
+vim /usr/lib/python2.7/site-packages/agdc-1.2.1b-py2.7.egg/agdc/agdc_default.conf
+
+wget https://raw.githubusercontent.com/wfpinedar/fpm_data_cube/master/src/installer/colombia.sql
+sudo -u postgres psql < colombia.sql

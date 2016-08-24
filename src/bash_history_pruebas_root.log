@@ -1,0 +1,385 @@
+ssh-keygen
+rm ~/.ssh/id_rsa*
+ssh-keygen
+fdisk -l
+ifconfig
+pwd
+ls
+cd /home/
+ls
+wget https://github.com/tmate-io/tmate/releases/download/2.2.1/tmate-2.2.1-static-linux-amd64.tar.gz
+ls
+tar -tvzf tmate-2.2.1-static-linux-amd64.tar.gz
+ls
+tar -xvzf tmate-2.2.1-static-linux-amd64.tar.gz
+ls
+cd tmate-2.2.1-static-linux-amd64/
+ls
+ls -la
+./tmate
+fjjfjdexit
+exit
+ls
+ssh-keygen
+./tmate
+cd /home/tmate-2.2.1-static-linux-amd64/
+./tmate
+ls
+yum -y install htop
+top
+kill -9 2428
+cd /home/
+ls
+rm tmate-2.2.1-static-linux-amd64.tar.gz
+mv tmate-2.2.1-static-linux-amd64/ tmate
+ls
+exit
+ls
+exit
+ls
+wget https://github-cloud.s3.amazonaws.com/releases/10651420/8709f19e-f53e-11e5-83bd-e65d35df9a3d.gz?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAISTNZFOVBIJMK3TQ%2F20160823%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20160823T162924Z&X-Amz-Expires=300&X-Amz-Signature=2f715817eb2c0aa8bb3835bef9b165a1ddcd4b70ddcc1aea389fdf6bbaca4b1c&X-Amz-SignedHeaders=host&actor_id=4140058&response-content-disposition=attachment%3B%20filename%3Dtmate-2.2.1-static-linux-amd64.tar.gz&response-content-type=application%2Foctet-stream
+wget "https://github-cloud.s3.amazonaws.com/releases/10651420/8709f19e-f53e-11e5-83bd-e65d35df9a3d.gz?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAISTNZFOVBIJMK3TQ%2F20160823%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20160823T162924Z&X-Amz-Expires=300&X-Amz-Signature=2f715817eb2c0aa8bb3835bef9b165a1ddcd4b70ddcc1aea389fdf6bbaca4b1c&X-Amz-SignedHeaders=host&actor_id=4140058&response-content-disposition=attachment%3B%20filename%3Dtmate-2.2.1-static-linux-amd64.tar.gz&response-content-type=application%2Foctet-stream"
+wget https://github.com/tmate-io/tmate/releases/download/2.2.1/tmate-2.2.1-static-linux-amd64.tar.gz
+ls
+tar -xzvf tmate-2.2.1-static-linux-amd64.tar.gz
+ls
+cd tmate-2.2.1-static-linux-amd64/
+ls
+screen
+yum install -y screen
+screen
+exit
+ls
+cd tmate-2.2.1-static-linux-amd64/
+./tmate -S /tmp/tmate.sock display -p '#{tmate_ssh}'
+./tmate -S /tmp/tmate.sock new-session -d
+tmate -S /tmp/tmate.sock display -p '#{tmate_web}'
+./tmate -S /tmp/tmate.sock display -p '#{tmate_web}'
+killall tmate
+pkill tmate
+pkill -9 tmate
+ps -A
+ps -A | grep -i tmate
+./tmate -S /tmp/tmate.sock new-session -d
+./tmate -S /tmp/tmate.sock display -p '#{tmate_web}'
+ps -A | grep -i tmate
+kill -9 3417
+./tmate
+screen
+vim /etc/ssh/ssh_config
+ssh root@192.168.106.7
+sshpass -p "ofuscado" ssh root@192.168.106.7
+sh root@192.168.106.7
+ssh root@192.168.106.7
+nmap 192.168.106.8
+nmap 192.168.106.7
+yum install -y nmap
+nmap 192.168.106.7
+date
+ls
+ssh root@192.168.106.7
+nmap 192.168.106.7
+yum install -y sshpass
+yum provides sshpass
+yum install epel-release
+yum install -y sshpass
+sshpass -p "ofuscado" ssh root@192.168.106.7
+sshpass -p "Cube2016*" ssh root@192.168.106.7
+while true; do sshpass -p "Cube2016*" ssh root@192.168.106.7; done
+while true; do sshpass -p "ofuscado" ssh root@192.168.106.7; done
+ls
+sshpass -p "Cube2016*" ssh root@192.168.106.7
+sshpass -p "ofuscado" ssh root@192.168.106.7
+ls
+wget sshpass -p "ofuscado" ssh root@192.168.106.6
+wget https://github.com/wfpinedar/fpm_data_cube/raw/master/src/installer/datacube-working.tgz
+tar -xzvf datacube-working.tgz
+ls
+./DataCube-dist/installer/CentOS/installer.sh
+yum search fortran
+yum install -y gcc-gfortran.x86_64
+ls
+rm DataCube-dist/ datacube
+rm DataCube-dist/ datacube -rf
+./DataCube-dist/installer/CentOS/installer.sh
+tar -xzvf datacube-working.tgz
+./DataCube-dist/installer/CentOS/installer.sh
+rm DataCube-dist/ datacube -rf
+./DataCube-dist/installer/CentOS/installer.sh | less
+tar -xzvf datacube-working.tgz
+./DataCube-dist/installer/CentOS/installer.sh > log.log
+ls
+cat log.log
+less log.log
+python
+ls
+cd DataCube-dist/
+ls
+python
+vim usr/lib/python2.7/site-packages/agdc-1.2.1b-py2.7.egg/agdc/datacube.py
+vim /usr/lib/python2.7/site-packages/agdc-1.2.1b-py2.7.egg/agdc/datacube.py
+python
+vim /usr/lib/python2.7/site-packages/agdc-1.2.1b-py2.7.egg/agdc/datacube.py
+python
+locate eotools | grep -i utils
+updatedb
+locate eotools | grep -i utils
+cd /root/DataCube-dist/installer/EO_tools/
+ls
+python setup.py install
+python
+ls
+cd datacube/
+ls
+cd agdc-develop/
+ls
+cd tests/modis/
+ls
+cd ..
+ls
+pwd
+cd
+mkdir tests
+mv tests/ test
+cd test/
+ls
+celery worker -A datacube_worker --purge
+sudo pip install celery flask flask-cors redis amqp pyrabbit
+yum install rabbitmq-server redis
+cd ~/test/; celery worker -A datacube_worker --purge
+ls
+cat datacube_worker.py
+psql -U cube_user -d postgres -W
+sed -i.bak '/^local/ s/peer/trust/' /var/lib/pgsql/9.3/data/pg_hba.conf
+sudo systemctl restart postgresql-9.3.service
+psql -U cube_user -d postgres -W
+cd ~/test/; celery worker -A datacube_worker --purge
+psql -h 127.0.0.1 -U cube_user -d postgres -W
+vim /var/lib/pgsql/9.3/data/pg_hba.conf
+sed '/^host/ s/ident/md5/' /var/lib/pgsql/9.3/data/pg_hba.conf
+sudo systemctl restart postgresql-9.3.service
+psql -h 127.0.0.1 -U cube_user -d postgres -W
+vim /var/lib/pgsql/9.3/data/pg_hba.conf
+sed -i '/^host/ s/ident/md5/' /var/lib/pgsql/9.3/data/pg_hba.conf
+sudo systemctl restart postgresql-9.3.service
+psql -h 127.0.0.1 -U cube_user -d postgres -W
+sudo -u postgres psql
+sudo systemctl restart postgresql-9.3.service
+psql -h 127.0.0.1 -U cube_user -d postgres -W
+cd ~/test/; celery worker -A datacube_worker --purge
+ls
+cd datacube/
+ls
+python
+vim /usr/local/lib/python2.7/dist-packages/agdc_api-0.1.0b20150513-py2.7.egg/datacube/__init__.pyc
+updatedb
+locate datacube
+cd /root/DataCube-dist/agdc/api/source/test/python/datacube/
+ls
+cd api
+ls
+cd ..
+ls
+cd ..
+ls
+cd ..
+ls
+cd ..
+ls
+cd ..
+ls
+python setup.py install
+$(cd ~/test/; celery worker -A datacube_worker --purge)
+cd ..
+ls
+pwd
+locate enum | grep -i ".py"
+pip install enum
+$(cd ~/test/; celery worker -A datacube_worker --purge)
+pip install matplotlib
+$(cd ~/test/; celery worker -A datacube_worker --purge)
+pip install Image
+$(cd ~/test/; celery worker -A datacube_worker --purge)
+python
+pip install Image
+$(cd ~/test/; celery worker -A datacube_worker --purge)
+easy_install-2.7 --user PIL
+pip install PIL
+easy_install-2.7 PIL
+python
+easy_install-2.7 Pillow
+python
+pip remove Image
+pip unistall Image
+pip uninstall Image
+pip uninstall Pillow
+pip install PIL
+pip install -I Pillow==1.0
+python
+pip uninstall Pillow
+pip install PIL  --allow-unverified PIL --allow-all-external
+yum search python | grep -i PIL
+pip install Image
+$(cd ~/test/; celery worker -A datacube_worker --purge)
+vim /root/test/dc_tasks.py
+$(cd ~/test/; celery worker -A datacube_worker --purge)
+pip install sklearn
+$(cd ~/test/; celery worker -A datacube_worker --purge)
+pip install Tkinter
+yum searh Tkinter
+yum search Tkinter
+yum install python34-tkinter
+$(cd ~/test/; celery worker -A datacube_worker --purge)
+yum install python34-tkinter
+yum search Tkinter
+yum remove python34-tkinter
+yum install -y tkinter
+$(cd ~/test/; celery worker -A datacube_worker --purge)
+vim /root/test/dc_tasks.py
+vim /root/test/dc_tasks.py +39
+$(cd ~/test/; celery worker -A datacube_worker --purge)
+cat /etc/passwd | grep 1000
+cat /etc/passwd
+adduser wfpinedar
+useradd wfpinedar
+userdel wfpinedar
+useradd wfpinedar
+passwd wfpinedar
+su wfpinedar
+cp test/ /home/wfpinedar/
+cp test/ /home/wfpinedar/ -R
+chown wfpinedar /home/wfpinedar/test/
+su wfpinedar
+vim /etc/sudoers.d/wfpinedar
+vim /etc/sudoers
+vim /etc/sudoers.d/wfpinedar
+su wfpinedar
+vim /etc/sudoers.d/wfpinedar
+vim /var/lib/pgsql/9.3/data/pg_hba.conf
+sudo systemctl restart postgresql-9.3.service
+vim /usr/lib/python2.7/site-packages/agdc_api-0.1.0_b20150513-py2.7.egg
+vim /usr/lib/python2.7/site-packages/agdc-1.2.1b-py2.7.egg/agdc/testdb.py
+vim /var/lib/pgsql/9.3/data/pg_hba.conf
+sudo systemctl restart postgresql-9.3.service
+setenforce 0
+sudo systemctl firewalld stop
+sudo systemctl stop firewalld
+nmap 192.168.106.6 -Pn
+sudo systemctl restart postgresql-9.3.service
+nmap 192.168.106.6 -Pn
+vim /var/lib/pgsql/9.3/data/pg_hba.conf
+vim /var/lib/pgsql/9.3/data/pg_ident.conf
+vim /var/lib/pgsql/9.3/data/global/pg_control
+vim /var/lib/pgsql/9.3/data/postgresql.conf
+sudo systemctl restart postgresql-9.3.service
+nmap 192.168.106.6 -Pn
+nmap localhost
+vim /var/lib/pgsql/9.3/data/postgresql.conf
+sudo systemctl restart postgresql-9.3.service
+vim /var/lib/pgsql/9.3/data/postgresql.conf
+sudo systemctl restart postgresql-9.3.service
+sudo systemctl start firewalld
+nmap 192.168.106.6 -Pn
+sudo systemctl stop firewalld
+wget sshpass -p "ofuscado" ssh root@192.168.106.6
+wget sshpass -p "ofuscado" ssh root@192.168.106.7
+sshpass -p "ofuscado" ssh root@192.168.106.7
+ls
+ls
+cd /tilestore/
+ls
+for a in $(seq -180 180); do for b in $(seq -90 90); do echo "$a" "$b"; done; done > kenya_cells.txt
+ls
+cd
+ags
+ls
+cd datacube/agdc-develop/tests/modis/
+ls
+cat test_modis_ingester.py
+python test_modis_ingester.py
+python test_modis_ingester.py --text
+python test_modis_ingester.py -t/--text
+python test_modis_ingester.py -t/--test
+cd
+ls
+cd DataCube-dist/
+ls
+cd agdc
+ls
+cd api-examples/source/
+ls
+cd test/
+ls
+ls -l
+cd ..
+ls
+cd ..
+ls
+cd ..
+ls
+cd examples/
+ls
+cat index_stacker.py
+python index_stacker.py
+ls
+cd ..
+ls
+ls
+cd ..
+ls
+cd EO_tools/EOtools/stats/
+ls
+cd ..
+ls
+cd stats/
+ls
+cd ..
+ls
+cd ..
+ls
+cd build/lib.linux-x86_64-2.7/EOtools/stats/
+ls
+cd ...
+cd ../../../
+ls
+cd ..
+ls
+cat README.md
+locate EOtools | grep -i stats
+cd /root/DataCube-dist/EO_tools/EOtools/
+ls
+cd ..
+python setup.py --help
+python setup.py --help--commands
+python setup.py --help-commands
+python setup.py install
+ls
+python
+python index_stacker.py
+cd
+ls
+cd DataCube-dist/agdc/examples/
+ls
+python index_stacker.py
+cp ~/DataCube-dist/agdc/agdc/agdc_default.conf /usr/lib/python2.7/site-packages/agdc-1.2.1b-py2.7.egg/agdc/agdc_default.conf
+python index_stacker.py
+vim /usr/lib/python2.7/site-packages/agdc-1.2.1b-py2.7.egg/agdc/agdc_default.conf
+vim /usr/lib/python2.7/site-packages/agdc-1.2.1b-py2.7.egg/agdc/agdc_default.conf
+python index_stacker.py
+grep -lir "cube_admin" ~
+vim /root/DataCube-dist/agdc/database/sql/*
+vim /root/DataCube-dist/agdc/database/sql/*
+psql -h 127.0.0.1 -U postgres -d postgres -W
+psql -h 127.0.0.1 -U postgres -d postgres -W
+psql -h 127.0.0.1 -U postgres -d postgres -W
+sudo -u postgres psql
+vim /usr/lib/python2.7/site-packages/agdc-1.2.1b-py2.7.egg/agdc/agdc_default.conf
+python index_stacker.py
+python fc_stacker.py
+python season_stacker.py
+exit
+parted
+ifconfig
+exit
+sshpass -p "ofuscado" ssh root@192.168.106.7
+ls
