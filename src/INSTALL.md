@@ -27,7 +27,7 @@ La arquitectura tiende a converger con la versión 2.
 Tiene un ingester válido para Landsat 7 (USGS)
 
 #Para los cambios que se realizaron se necesita numpy ==1.9 sklearn
- sudo pip install sklearn numpy==1.9
+sudo pip install sklearn numpy==1.9
 sudo apt-get install libfreetype6 libfreetype6-dev
 sudo -H pip install matplotlib
 

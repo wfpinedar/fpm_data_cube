@@ -4,6 +4,8 @@ parted
 select /dev/sdb
 mktable gpt
 #for best performance align block 2048s
-mkpart primary ext4 2048s 100%
+#mkpart primary ext4 2048s 100%
+#for all size
+mkpart primary 0 100%
+unit mib
 print
-
