@@ -37,3 +37,5 @@ Con este trabajo se pretende:
 * Normaliza las versiones de paquetes, módulos y sus dependencias que se deben instalar dentro de la distribución Centos 7.
 * Se centraliza la información de instalación ya que en un principio los ficheros/archivos requeridos estaban dispersos en los correos de los relacionados al proyecto.
 * Tener un versionamiento de código con git permite el control y escalamiento del proyecto de generación de imagen de centos 7 con el cubo instalado que se ha llevado a cabo en estas semanas. https://git-scm.com/book/es/v1/Empezando-Acerca-del-control-de-versiones
+* Por lo tanto con este trabajo se ha generado facilidad para desplegar entornos de desarrollo, pruebas y producción como se recomienda para todo desarrollo de software. https://styde.net/tipos-de-servidores-y-entornos
+
