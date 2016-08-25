@@ -1,8 +1,11 @@
+--Note: basado en el trabajo de @Deicidium, ofuscado y adaptado a Markdown.
+
 LVM es un método de particionar las unidades de disco duro que proporciona una mayor flexibilidad en la gestión de espacio de almacenamiento que el método tradicional de particionado de disco. Logical Volume Manager o LVM, ha sido una característica del kernel de Linux desde 1999 aproximadamente, y fue contribuido (al kernel de Linux) por Sistina Software, Inc, empresa que luego fue adquirida por Red Hat.
 
-Otros Sistemas Operativos similares a UNIX como AIX, HP-UX y Sun Solaris - tienen su propia aplicación de gestión de volúmenes lógicos. Mas hasta hace poco, no existía una tecnología equivalente - En cuanto a prestaciones - en las distribuciones BSD. FreeBSD sólo recientemente ha añadido soporte experimental para el sistema de archivos ZFS una tecnología desarrollada por Oracle que implementa algunas de las características de LVM.<ref>http://www.linuxbsdos.com/2008/09/24/the-benefits-of-using-linux-logical-volume-manager/</ref>
+Otros Sistemas Operativos similares a UNIX como AIX, HP-UX y Sun Solaris - tienen su propia aplicación de gestión de volúmenes lógicos. Mas hasta hace poco, no existía una tecnología equivalente - En cuanto a prestaciones - en las distribuciones BSD. FreeBSD sólo recientemente ha añadido soporte experimental para el sistema de archivos ZFS una tecnología desarrollada por Oracle que implementa algunas de las características de LVM. http://www.linuxbsdos.com/2008/09/24/the-benefits-of-using-linux-logical-volume-manager/
 
-=Conceptos básicos de LVM:=
+#Conceptos básicos de LVM
+------------------------------
 
 Con LVM, el disco duro o grupo de discos duros está localizado para uno o más volúmenes físicos (PV). Un volumen físico no abarca más de una unidad de disco duro.
 
@@ -10,9 +13,10 @@ Los volúmenes físicos son combinados en grupos de volúmenes lógicos, a excep
 
 Ya que un volumen físico no puede abarcar más de una unidad, si desea que el grupo de volumen abarque más de una unidad, se deberán crear uno o más volúmenes físicos por unidad.
 
-------------------------------
+![screenshot](./images/LVM01.png)
 
-=Anatomía de un LVM:=
+#Anatomía de un LVM
+------------------------------
 
 Un LVM se descompone en tres partes:
 
@@ -22,9 +26,9 @@ Un LVM se descompone en tres partes:
 
 * Grupos de volúmenes (VG): es la parte superior de la LVM. Es la "caja" en la que tenemos nuestros volúmenes lógicos (LV) y nuestros volúmenes físicos (PV). Se puede ver como una unidad administrativa en la que se engloban nuestros recursos. Hay que hacer notar que mientras un PV no se añada al VG, no podemos comenzar a usarlo.
 
-[[File:LVM02.gif]]
+![screenshot](./images/LVM02.gif)
 
-=Pasos básicos para crear un sistema de particionamiento LVM:=
+#Pasos básicos para crear un sistema de particionamiento LVM
 
 
 * Crear un sistema de ficheros independiente a la arreglo LVM con punto de montaje /boot, un sistema de archivo ext3 o ext4, con un tamaño de 256 a 512 MB.
@@ -39,10 +43,9 @@ Un LVM se descompone en tres partes:
 
 *Asignamos sistemas de ficheros a los volúmenes lógicos.
 
-[[File:LVM03.png]]
+![screenshot](./images/LVM03.png)
 
-
-=Ventajas de usar LVM:=
+#Ventajas de usar LVM
 
 * Una de las decisiones que afronta un usuario instalando GNU/Linux es cómo particionar el disco duro. La necesidad de estimar cuanto espacio será necesario para el sistema, para los temporales o para los datos personales, puede convertirse en algo problemático, por lo que muchos usuarios optan por crear una partición que ocupe todo el disco y allí introducir los datos. Aún habiendo estimado correctamente cuánto espacio se necesita para /home, /usr, /tmp, o cualquier otro directorio importante, es bastante común que nos quedemos sin espacio en estas particiones, cuando tenemos espacio de sobra en alguna otra. Con el uso de un administrador de volúmenes lógicos, el disco completo puede ser asignado a un único grupo lógico y definir distintos volúmenes lógicos para almacenar /home u otros directorios. En el caso que nos quedemos sin espacio, por ejemplo, en /home, y tenemos espacio en /opt, podríamos redimensionar /home y /opt y usar el espacio que le hemos quitado a /opt y añadírselo a /home. Hay que tener en cuenta, que para realizar esto, nuestro sistema de ficheros debe soportar el redimensionado por arriba y por abajo, como ReiserFS.
 
@@ -52,82 +55,117 @@ Un LVM se descompone en tres partes:
 
 * Los distintos grupos de usuarios  pueden tener sus volúmenes lógicos y éstos pueden crecer lo que sea necesario, y el administrador puede realizar las operaciones oportunas sobre dichos volúmenes.
 
-=Gestión a través de una interfaz gráfica de usuario:=
+#Gestión a través de una interfaz gráfica de usuario
 
 Como superusuario instalar la herramienta de configuración de LVM:
 
+```bash
  yum install -y system-config-lvm
+ ```
 
 en Debian:
 
+```bash
  apt-get install system-config-lvm
 
  apt-get install kvpm
+```
 
 Abrimos la herramienta ingresando en una terminal como superusuario la orden:
 
+```bash
  dbus-launch system-config-lvm &
+```
 
-=Aumentar el tamaño de un volumen lógico por terminal:=
+#Lista de comandos de terminal de LVM:
+
+![screenshot](./images/Lvm-cheatsheet.png)
+
+#Aumentar el tamaño de un volumen lógico por terminal
 
 Listamos las particiones del volumen lógico:
 
+```bash
  lvm lvscan
+```
 
 Desmontamos la partición deseada. Nota: en este ejemplo será "/dev/Ejemplo/Home" y le aumentaremos 20 GB.
 
+```bash
  umount /dev/Ejemplo/Home
+```
 
 Asignamos los 20 GB a la partición deseada:
 
+```bash
  lvextend -L+20G /dev/Ejemplo/Home
+```
 
 Revisamos el sistema de ficheros:
 
+```bash
  e2fsck -f /dev/Ejemplo/Home
+```
 
 Redimensionamos:
 
+```bash
  resize2fs /dev/Ejemplo/Home
+```
 
-=Reducir el tamaño de un volumen lógico por terminal:=
+#Reducir el tamaño de un volumen lógico por terminal
 
 Nota: esta operación es peligrosa, y debe hacerse un respaldo de los datos antes de hacerse.
 
 Listamos las particiones del volumen lógico:
 
+```bash
  lvm lvscan
+```
 
 Desmontamos el volumen lógico. Nota: en este ejemplo será "/dev/Ejemplo/Home" y le reduciremos 20 GB.
 
+```bash
  umount /dev/Ejemplo/Home
+```
 
 Revisamos el sistema de ficheros:
 
+```bash
  e2fsck -f /dev/Ejemplo/Home
+```
 
 Redimensionamos la partición física:
 
+```bash
  resize2fs -p /dev/Ejemplo/Home 20G
+```
 
 Reducimos el volumen lógico con el mismo valor:
 
+```bash
  lvreduce -L 20G /dev/Ejemplo/Home
+```
 
 Revisamos otra vez el sistema de ficheros:
 
+```bash
  e2fsck -f /dev/Ejemplo/Home
+```
 
 Comprobamos que todo este en orden con:
 
+```bash
  resize2fs -p /dev/Ejemplo/Home
+```
 
 Montamos el volumen lógico:
 
+```bash
  mount /dev/Ejemplo/Home
+```
 
-=Referencias=
-<references />
+#Referencias
 
 == Enlaces externos ==
 
