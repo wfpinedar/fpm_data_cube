@@ -212,7 +212,7 @@ else
   e_note 'Terminado.'
 fi #/tmp/create_databases_roles.sql
 
-#rationale
+#rationale: verifica la existencia del directorio que contiene todos los scripts a ser ejecutados
 path=scripts_sql
 if [ -d $path ]
 then
